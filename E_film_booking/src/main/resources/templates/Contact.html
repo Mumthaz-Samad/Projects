@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+     <script src="https://kit.fontawesome.com/cf0d2718c3.js" ></script>
+    <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #34495e);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.menu {
+    background: #2c3e50;
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo h4 {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #1e2a47;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #f39c12; 
+    animation: logoAnimation 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes logoAnimation {
+    0% {
+        transform: rotate(0deg);
+        color: #f39c12;
+    }
+    50% {
+        transform: rotate(5deg);
+        color: #ffcc00; 
+    }
+    100% {
+        transform: rotate(0deg);
+        color: #f39c12;
+    }
+}
+
+
+
+.main-content {
+    margin-left: 250px;
+    padding: 40px;
+    width: calc(100% - 250px);
+}
+
+.before_head {
+    display: flex;
+    margin-bottom: 60px;
+    background-color: #2c3e50;
+    padding: 20px;
+    margin-top: -40px;
+   width: 930px;
+   
+    height: 25px;
+    align-items: center;
+}
+
+.back-button {
+    margin-left: auto; /* Push the button to the right */
+    padding: 5px 15px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #e67e22; /* Darker shade for hover effect */
+}
+
+
+
+.login-form {
+        transition: background-color 0.3s ease;
+       background-color: #fff;
+         border: 2px solid #f39c12;
+        color: black;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+        max-width: 500px;
+        margin: 20px auto;
+        margin-left:190px;
+        
+    }
+    .login-form h2
+    {
+    color:#2c3e50;
+    }
+
+    
+</style>
+</head>
+<body>
+
+    <div class="container">
+      
+        <div class="menu">
+            <div class="logo">
+                <h4>THE CROWN THEATER</h4>
+            </div>
+           
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+           <div class="container base">
+		<div class="row base-row">
+			<div class="before_head">
+                  <button class="back-button" type="button" onclick="window.history.back();">Go Back</button>
+            </div>
+			
+			<div class="login-form">
+			
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you! For any questions, assistance, or feedback, please reach out to us through any of the following methods:</p>
+
+    <h3>Email</h3>
+    <p>For general inquiries: <a href="mailto:abcd@crowntheater.com">abcd@crowntheater.com</a></p>
+   
+    <h3>Phone</h3>
+    <p>Customer Support: 1234567898</p>
+    
+			</div>
+		</div>
+
+	</div>
+           
+
+            
+               
+        </div>
+    </div>
+
+</body>
+</html>

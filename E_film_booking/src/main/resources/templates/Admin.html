@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+<script src="https://kit.fontawesome.com/cf0d2718c3.js" ></script>
+  <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #34495e);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .menu {
+            background: #2c3e50;
+            color: #fff;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .logo h4 {
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+            background-color: #1e2a47;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            color: #f39c12; 
+            animation: logoAnimation 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoAnimation {
+            0% {
+                transform: rotate(0deg);
+                color: #f39c12;
+            }
+            50% {
+                transform: rotate(5deg);
+                color: #ffcc00; 
+            }
+            100% {
+                transform: rotate(0deg);
+                color: #f39c12;
+            }
+        }
+
+        .list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 190px;
+        }
+
+        .list li {
+            margin: 15px 0;
+        }
+
+        .list li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            background-color: #B87333;  
+        }
+
+        .list li a:hover {
+            background-color: #ffcc00; 
+            color: #2c3e50;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
+        }
+
+        .before_head {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: #2c3e50;
+            padding: 20px;
+            margin-top: -40px;
+            width: 1000px;
+        }
+
+        .before_head input, .before_head select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            width: 150px;
+            margin-top: 20px;
+        }
+
+        .before_head h2 {
+            padding: 10px;
+            margin-left: -90px;
+            margin-right: 20px;
+            color: #f39c12;
+        }
+
+        .first-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+            min-height: 100vh;
+            margin-top: -240px;
+            margin-left: -50px;
+        }
+
+        .jumbotron {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            width: 500px;
+            text-align: center;
+            border: 2px solid #d4af37; 
+            height: 130px;
+        }
+
+        .jumbotron h4 {
+            color: #2c3e50 ;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: -12px;
+        }
+
+        .dynamic-seat {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-size: 18px;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+
+        #show-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;  
+            margin-right: 5px;
+        }
+
+        .jumbotron span {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .jumbotron:hover {
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: #c8a000;  
+        }
+.film-booking-container {
+    width: 450px;
+    margin: auto;
+    padding: 25px;
+    background-color: #fff;
+    border: 2px solid #d4af37; /* Golden border */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.film-booking-container h2 {
+    color: #d4af37; /* Golden text color */
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.film-booking-container label {
+    font-size: 1em;
+    color: #2c3e50; /* Dark blue text color */
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.film-booking-container input[type="text"],
+.film-booking-container input[type="file"],
+.film-booking-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1 em;
+    background-color: #f9f9f9;
+}
+
+.film-booking-container textarea {
+    resize: vertical;
+}
+
+.film-booking-container input[type="text"]:focus,
+.film-booking-container input[type="file"]:focus,
+.film-booking-container textarea:focus {
+    border-color: #d4af37;
+    outline: none;
+}
+
+.book-seat-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.book-seat-button:hover {
+    background-color: #b8942e; /* Darker golden color */
+}
+.profile-icon {
+    position: absolute;
+    right: 20px; /* Adjust the value as needed */
+    font-size: 30px; /* Adjust icon size */
+    color: #ffcc00;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+    color: #e67e22;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      
+        <div class="menu">
+            <div class="logo">
+                <h4>THE CROWN THEATER</h4>
+            </div>
+            <ul class="list">
+                <li><a th:classappend="${menu == 'home'} ? 'text-dark' : ''" th:href="@{/home}"><i class="fas fa-home"></i>&nbsp;&nbsp;Home</a></li>
+                <li><a th:href="@{/bookings/all}"><i class="fas fa-users"></i>&nbsp;&nbsp;All Bookings</a></li>
+				
+                <li><a th:href="@{/about}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;About us</a></li>
+                <li><a th:href="@{/contact}"><i class="fas fa-phone-square-alt"></i>&nbsp;&nbsp;Contact us</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="before_head">
+                <div class="profile-icon">
+               <i class="fas fa-user-circle"></i>
+                     </div>
+                
+            </div>
+
+            <div class="before_main_section">
+            
+               <div class="second-section">
+               <div class="film-booking-container">
+    <h2>Update details</h2>
+    
+    <form th:action="@{/uploadMovieDetails}" method="post" enctype="multipart/form-data">
+                    <label for="movieName">Movie Name:</label>
+                    <input type="text" id="movieName" name="movieName" placeholder="Enter movie name" required>
+
+                    <label for="moviePoster">Movie Poster:</label>
+                    <input type="file" id="moviePoster" name="image" accept="image/*" required>
+
+                    <label for="movieDetails">Movie Details:</label>
+                    <textarea id="movieDetails" name="movieDetails" placeholder="Enter movie description" rows="4" required></textarea>
+
+                    <button type="submit" class="book-seat-button">Upload Movie</button>
+                </form>
+     </div>
+     
+</div>
+               
+               </div>
+               </div>
+               </div>
+
+</body>
+</html>

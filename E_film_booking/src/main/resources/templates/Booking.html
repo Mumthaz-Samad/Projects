@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+     <script src="https://kit.fontawesome.com/cf0d2718c3.js" ></script>
+  <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #34495e);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .menu {
+            background: #2c3e50;
+            color: #fff;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .logo h4 {
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+            background-color: #1e2a47;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            color: #f39c12; 
+            animation: logoAnimation 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoAnimation {
+            0% {
+                transform: rotate(0deg);
+                color: #f39c12;
+            }
+            50% {
+                transform: rotate(5deg);
+                color: #ffcc00; 
+            }
+            100% {
+                transform: rotate(0deg);
+                color: #f39c12;
+            }
+        }
+
+
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
+        }
+        .booking-container h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #f39c12;
+        }
+    .before_head {
+    display: flex;
+    margin-bottom: 60px;
+    background-color: #2c3e50;
+    padding: 20px;
+    margin-top: -40px;
+   width: 930px;
+   
+    height: 25px;
+    align-items: center;
+}
+
+.back-button {
+    margin-left: auto; /* Push the button to the right */
+    padding: 5px 15px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #e67e22; /* Darker shade for hover effect */
+}
+        
+ .booking-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 700px; 
+            margin: 0 auto;
+            text-align: center;
+           border: 2px solid #f39c12; 
+           
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+            margin-left:25px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .form-group input{
+            width: 90%;
+            padding: 8px;
+            margin-top: 3px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 14px;
+        }
+        .form-group select {
+            width: 93%;
+            padding: 8px;
+            margin-top: 3px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 14px;
+        
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #f39c12;
+        }
+
+        .seats-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+            margin-left:25px;
+        }
+
+        .seat-box {
+            width: 45px;
+            height: 45px;
+            background-color: #2ecc71;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .seat-box:hover {
+            background-color: #27ae60;
+        }
+
+        .seat-box.selected {
+            background-color: #e74c3c;
+        }
+
+        .total-section {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .book-seat-button, .back-button {
+            background-color: #f39c12;
+            color: #2c3e50;
+            padding: 10px 18px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-seat-button:hover, .back-button:hover {
+            background-color: #ffcc00;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      
+        <div class="menu">
+            <div class="logo">
+                <h4>THE CROWN THEATER</h4>
+            </div>
+            
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="before_head">
+            
+               <button class="back-button" type="button" onclick="window.history.back();">Go Back</button>
+            </div>
+
+            <div class="before_main_section">
+            
+               <div class="container">
+        <div class="booking-container">
+            
+
+             <h2>Film Seat Booking</h2>
+            <form action="/bookings/booksaving" method="post">
+                <input type="hidden" name="bookedSeats" id="bookedSeats" value="" />
+                <div class="form-group">
+                     
+                    <label for="filmName">Film Name:</label>
+                    <input type="text" id="filmName" name="filmName" placeholder="Enter film name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeselect">Select Time:</label>
+                    <select name="selectedTime" id="timeselect" required>
+                        <option value="09:00 am">09:00 am</option>
+                        <option value="12:00 pm">12:00 pm</option>
+                        <option value="03:00 pm">03:00 pm</option>
+                        <option value="06:00 pm">06:00 pm</option>
+                        <option value="09:00 pm">09:00 pm</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateselect">Select Date:</label>
+                    <input type="date" name="selectedDate" id="dateselect" required>
+                </div>
+
+                <!-- Seat Selection -->
+                <div class="seats-container">
+                    <div class="seat-box">1</div>
+                    <div class="seat-box">2</div>
+                    <div class="seat-box">3</div>
+                    <div class="seat-box">4</div>
+                    <div class="seat-box">5</div>
+                    <div class="seat-box">6</div>
+                    <div class="seat-box">7</div>
+                    <div class="seat-box">8</div>
+                    <div class="seat-box">9</div>
+                    <div class="seat-box">10</div>
+                    <div class="seat-box">11</div>
+                    <div class="seat-box">12</div>
+                    <div class="seat-box">13</div>
+                    <div class="seat-box">14</div>
+                    <div class="seat-box">15</div>
+                    <div class="seat-box">16</div>
+                    <div class="seat-box">17</div>
+                    <div class="seat-box">18</div>
+                    <div class="seat-box">19</div>
+                    <div class="seat-box">20</div>
+                    <div class="seat-box">21</div>
+                    <div class="seat-box">22</div>
+                    <div class="seat-box">23</div>
+                    <div class="seat-box">24</div>
+                    <div class="seat-box">25</div>
+                    <div class="seat-box">26</div>
+                    <div class="seat-box">27</div>
+                    <div class="seat-box">28</div>
+                    <div class="seat-box">29</div>
+                    <div class="seat-box">30</div>
+                </div>
+
+                <!-- Total Price -->
+                <div class="total-section">
+                    Total: <span id="show-price">0</span> rs
+                </div>
+                 <input type="hidden" name="totalPrice" id="totalPrice" value="" />
+
+                <!-- Book Seat Button -->
+                <button class="book-seat-button" type="submit">Book Seat</button>
+
+                <!-- Back Button -->
+                <button class="back-button" type="button" onclick="window.history.back();">Go Back</button>
+            </form>
+        </div>
+    </div>
+               
+               
+               </div>
+               </div>
+               </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const seats = document.querySelectorAll(".seat-box");
+        const totalDisplay = document.getElementById("show-price");
+        const seatPrice = 520;
+        const bookedSeatsInput = document.getElementById("bookedSeats");
+        const totalPriceInput = document.getElementById("totalPrice");
+        let selectedSeatsCount = 0;
+
+        seats.forEach(seat => {
+            seat.addEventListener("click", () => {
+                if (seat.classList.contains("selected")) {
+                    seat.classList.remove("selected");
+                    selectedSeatsCount--;
+                } else {
+                    seat.classList.add("selected");
+                    selectedSeatsCount++;
+                }
+                updateTotal();
+                updateBookedSeats();
+            });
+        });
+
+        function updateTotal() {
+            const totalPrice = selectedSeatsCount * seatPrice;
+            totalDisplay.textContent = totalPrice;
+            totalPriceInput.value = totalPrice; // Update the hidden input field for total price
+        }
+
+        function updateBookedSeats() {
+            const selectedSeats = Array.from(document.querySelectorAll(".seat-box.selected"))
+                .map(seat => seat.textContent.trim())
+                .join(",");
+            bookedSeatsInput.value = selectedSeats;
+        }
+
+        document.querySelector("form").addEventListener("submit", function (e) {
+            if (!bookedSeatsInput.value || selectedSeatsCount === 0) {
+                e.preventDefault();
+                alert("Please select at least one seat before booking.");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
