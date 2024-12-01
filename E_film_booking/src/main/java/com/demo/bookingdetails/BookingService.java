@@ -1,11 +1,11 @@
-package com.arun.demo.bookingdetails;
+package com.demo.bookingdetails;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.arun.demo.beans.Bookingdetails;
+import com.demo.beans.Bookingdetails;
 @Service
 public class BookingService {
 	@Autowired

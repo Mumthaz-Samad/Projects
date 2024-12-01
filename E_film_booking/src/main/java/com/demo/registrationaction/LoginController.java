@@ -1,4 +1,4 @@
-package com.arun.demo.registrationaction;
+package com.demo.registrationaction;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.arun.demo.beans.Bookingdetails;
-import com.arun.demo.beans.Registrationdetails;
+import com.demo.beans.Bookingdetails;
+import com.demo.beans.Registrationdetails;
 
 @Controller
 public class LoginController {

@@ -1,10 +1,11 @@
-package com.arun.demo.settings;
+package com.demo.settings;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import com.arun.demo.beans.Registrationdetails;
+
+import com.demo.beans.Registrationdetails;
 
 import javax.servlet.http.HttpSession;
 

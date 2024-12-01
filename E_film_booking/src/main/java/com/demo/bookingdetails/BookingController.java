@@ -1,4 +1,4 @@
-package com.arun.demo.bookingdetails;
+package com.demo.bookingdetails;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.demo.beans.Bookingdetails;
+import com.demo.beans.Registrationdetails;
+
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.arun.demo.beans.Bookingdetails;
-import com.arun.demo.beans.Registrationdetails;
 
 @Controller
 @RequestMapping("/bookings")

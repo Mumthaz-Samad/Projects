@@ -1,4 +1,4 @@
-package com.arun.demo.movieuploads;
+package com.demo.movieuploads;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.arun.demo.beans.MovieDetails;
+import com.demo.beans.MovieDetails;
 
 @Controller
 public class MovieController {
@@ -33,7 +33,7 @@ public class MovieController {
 	            model.addAttribute("error", "Error uploading file: " + e.getMessage());
 	        }
 
-	        return "redirect:/Admin"; 
+	        return "redirect:/admin"; 
 	    }
 	    @GetMapping("/home")
 	    public String getMovies(Model model) {

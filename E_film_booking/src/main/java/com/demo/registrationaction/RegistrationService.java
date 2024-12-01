@@ -1,9 +1,9 @@
-package com.arun.demo.registrationaction;
+package com.demo.registrationaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.arun.demo.beans.Registrationdetails;
+import com.demo.beans.Registrationdetails;
 @Service
 public class RegistrationService {
 	@Autowired

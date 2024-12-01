@@ -1,4 +1,4 @@
-package com.arun.demo.beans;
+package com.demo.beans;
 
 import java.util.Date;
 

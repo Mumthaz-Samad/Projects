@@ -1,8 +1,9 @@
-package com.arun.demo.profile;
+package com.demo.profile;
 
-import com.arun.demo.beans.Bookingdetails;
-import com.arun.demo.beans.Registrationdetails;
-import com.arun.demo.bookingdetails.BookingService;
+import com.demo.beans.Bookingdetails;
+import com.demo.beans.Registrationdetails;
+import com.demo.bookingdetails.BookingService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

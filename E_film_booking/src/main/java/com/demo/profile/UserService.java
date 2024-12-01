@@ -1,8 +1,9 @@
-package com.arun.demo.profile;
+package com.demo.profile;
 
-import com.arun.demo.beans.Registrationdetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.demo.beans.Registrationdetails;
 
 @Service
 public class UserService {

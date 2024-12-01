@@ -1,9 +1,9 @@
-package com.arun.demo.settings;
+package com.demo.settings;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.arun.demo.beans.Registrationdetails;
+import com.demo.beans.Registrationdetails;
 
 
 @Service
